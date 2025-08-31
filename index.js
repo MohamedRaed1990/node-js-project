@@ -115,7 +115,7 @@ app.patch("/article/:articleID",async(req,res)=>{
 
 app.get("/",async(req,res)=>{
     const articles = await Article.find();
-    res.render("articles.ejs",{
+    res.render("articles",{
         allArticles : articles
     });
 })
