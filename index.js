@@ -25,9 +25,9 @@ app.get("/hello",(req,res)=>{
 app.get("/test",(erq,res)=>{
     res.send("you are in test")
 })
-app.get("/",(req,res)=>{
-    res.send("Hello in Node Js Project")
-})
+// app.get("/",(req,res)=>{
+//     res.send("Hello in Node Js Project")
+// })
 app.put("/commit",(req,res)=>{
     res.send("Hello in Node Js ")
 })
@@ -115,7 +115,7 @@ app.patch("/article/:articleID",async(req,res)=>{
 
 app.get("/",async(req,res)=>{
     const articles = await Article.find();
-    res.render("articles.ejs",{
+    res.status(200).render("articles.ejs",{
         allArticles : articles
     });
 })
