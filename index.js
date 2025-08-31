@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const Article = require("./models/Article")
 require("dotenv").config();
 const app = express();
-
+app.set("view engine","ejs");
 app.use(express.json());
 mongoose.connect(process.env.MONGO_URL)
 .then(()=>{
