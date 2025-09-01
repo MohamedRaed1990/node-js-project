@@ -119,7 +119,17 @@ app.get("/",async(req,res)=>{
         allArticles : articles
     });
 })
+app.get("/seed",async(req,res)=>{
+    const newArticle = new Article();
+    const artTitle="My First Title";
+    const artBody ="This Body Created By Mohamed Raed";
+    newArticle.title = artTitle;
+    newArticle.body = artBody;
+    newArticle.numberOfLikes = 100;
 
+    await newArticle.save();  
+    res.json(newArticle);
+})
 
 app.listen(3000,()=>{
     console.log("I am Listening from port 3000");
